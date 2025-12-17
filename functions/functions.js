@@ -227,7 +227,7 @@ export async function findDangerousPeople() {
 
 
     try {
-        const peopleParam = encodeURIComponent(JSON.stringify(dangerousPeople));
+        const peopleParam = JSON.stringify(dangerousPeople);
         const reportUrl = `${BASE_URL}/report?people=${peopleParam}`;
         const response = await fetch(reportUrl);
 
@@ -237,4 +237,5 @@ export async function findDangerousPeople() {
     } catch (error) {
         console.error('Error sending report:', error.message);
     }
+
 }
